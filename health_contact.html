@@ -2,55 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Health Analysis Data</title>
+  <title>Contact Us</title>
   <link rel="stylesheet" href="./health_analysis.css">
+  <style>
+    body{
+        text-align: center;
+    }
+    /* Some basic styling for demonstration purposes */
+    #contactForm {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    #contactForm input,
+    #contactForm textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+    }
+    #contactForm button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #contactForm button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-   <nav><h1>Health Analysis Census</h1>
-<ul>
-  <li><a href="./index.html" id="home">Home </a></li>
-  <li><a href="./health_contact.html" id="contact">Contact Us </a></li>
-  <li><input type="text" id="conditionInput" placeholder="Enter a health condition">  </li>
-  <li><button id='btnSearch'>Search</button>
-  </li>
+  <nav><h1>Health Analysis Census</h1>
+    <ul>
+      <li><a href="./index.html" id="home">Home </a></li>
+      <li><a href="./health_contact.html" id="contact">Contact Us </a></li>
+      </li>
 
-</ul>
-</nav>
-<div class="container">
-<div class="analysisForm">
-<h1>Healthcare Data Analysis</h1>
-<div>
-<label for="name">Name:</label>
-<input type="text" id="name">
-</div>
-<div>
-<label>Gender:</label>
-<label for="male">Male</label>
-<input type="radio" name="gender" id="male" value="Male">
-<label for="female">Female</label>
-<input type="radio" name="gender" id="female" value="Female">
-</div>
-<div>
-<label for="age">Age:</label>
-<input type="number" id="age">
-</div>
-<div>
-<label for="condition">Condition:</label>
-<select id="condition">
-  <option value="">Select condition</option>
-  <option value="Diabetes">Diabetes</option>
-  <option value="Thyroid">Thyroid</option>
-  <option value="High Blood Pressure">High Blood Pressure</option>
-</select>
-</div>
-<button id="addPatient">Add Patient</button>
-<h2>Analysis Report</h2>
-<div id="report"></div>
-</div>
-<div class="searchCondition">
-    <div id="result"></div>
-</div>
-</div>
-<script src="./health_analysis.js"></script>
+    </ul>
+    </nav>
+  <h1>Contact Us</h1>
+  <p>Feel free to contact us to know more about your conditions and for treatment methods.</p>
+
+  <form id="contactForm">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="condition">Condition</label>
+      <input type="text" id="condition" name="condition" required>
+    </div>
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" onclick="thankyou()">Submit</button>
+  </form>
+  <script>
+    function thankyou(){
+        alert('Thank you for contacting us!')
+    }
+  </script>
 </body>
 </html>
